@@ -141,3 +141,48 @@ nav .nav-gallery {
     white-space: nowrap;
   }
 }
+
+.photo-frame.opening-film {
+  aspect-ratio: 16 / 10;
+  background: #203c33;
+}
+
+.opening-film video,
+.opening-grid video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.opening-collection {
+  margin-top: clamp(36px, 6vw, 70px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.opening-collection h3 {
+  margin: 8px 0 20px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.15;
+}
+
+.opening-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 22px;
+}
+
+.opening-grid video {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  background: #202631;
+}
+
+@media (max-width: 680px) {
+  .opening-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

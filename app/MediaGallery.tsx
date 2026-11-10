@@ -1,3 +1,10 @@
+const openingClips = [
+  { file: "mountain-sunset", title: "雪山公路日落" },
+  { file: "vintage-headlight", title: "复古车灯特写" },
+  { file: "night-tunnel", title: "夜间隧道延时" },
+  { file: "camera-lens", title: "暗光下转动镜头" },
+];
+
 export default function MediaGallery() {
   return (
     <section id="gallery" className="shell gallery" aria-labelledby="gallery-title">
@@ -6,7 +13,7 @@ export default function MediaGallery() {
           <p className="eyebrow"><span className="section-number">03</span> PHOTO &amp; FILM</p>
           <h2 id="gallery-title">影像集</h2>
         </div>
-        <p>一段视频，两张照片。</p>
+        <p>风景、车辆与镜头里的细节。</p>
       </div>
       <div className="gallery-grid">
         <figure className="gallery-road">
@@ -24,6 +31,21 @@ export default function MediaGallery() {
           </video>
           <figcaption><span>03 <i /> 短片</span><span>00:23</span></figcaption>
         </figure>
+      </div>
+      <div className="opening-collection" aria-labelledby="opening-collection-title">
+        <p className="eyebrow">OPENING SHOTS</p>
+        <h3 id="opening-collection-title">开场镜头</h3>
+        <div className="opening-grid">
+          {openingClips.map(({ file, title }, index) => (
+            <figure key={file}>
+              <video controls muted playsInline preload="none" poster={`/opening/${file}.jpg`} aria-label={title}>
+                <source src={`/opening/${file}.mp4`} type="video/mp4" />
+                <a href={`/opening/${file}.mp4`}>打开短片</a>
+              </video>
+              <figcaption><span>{String(index + 2).padStart(2, "0")} <i /> {title}</span><span>短片</span></figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import MediaGallery from "./MediaGallery";
+import OpeningFilm from "./OpeningFilm";
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
@@ -39,13 +40,7 @@ export default function Home() {
             <a className="text-link" href="#about">更多关于我 <Arrow /></a>
           </div>
         </div>
-        <figure className="hero-figure">
-          <div className="photo-frame">
-            <img src="/scenes/lakeside.jpg" alt="青蓝的湖面上有一艘船，公路沿着金色林木覆盖的崖壁转弯" width="904" height="1034" fetchPriority="high" />
-            <span className="photo-number" aria-hidden="true">01 / 02</span>
-          </div>
-          <figcaption><span>01 <i /> 湖畔弯道</span><span>THE LAKESIDE ROAD</span></figcaption>
-        </figure>
+        <OpeningFilm />
       </section>
 
       <section id="about" className="about" aria-labelledby="about-title">
