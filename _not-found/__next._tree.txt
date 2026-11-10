@@ -1,2 +1,2 @@
-:HL["/duzhe-site/_next/static/css/5283ec37a10ccf5f.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"8XCVZedBqUYn1InO-e7fg"}
+:HL["/duzhe-site/_next/static/css/7b564a0a14ca0f68.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"GHPIqpOt_1UmJDBx_SI6h"}
