@@ -25,7 +25,12 @@ export default function Home() {
     <header className="site-header" id="top">
       <div className="shell header-inner">
         <a className="brand" href="#top" aria-label="杜喆，返回顶部"><span className="mark">Z<span>.</span></span><span className="brand-name">杜喆 <b>DU ZHE</b></span></a>
-        <nav aria-label="页面导航"><a href="#about">关于我</a><a className="nav-gallery" href="#gallery">影像集</a><a className="nav-film" href="#film">自我介绍 <Arrow diagonal /></a></nav>
+        <nav aria-label="页面导航">
+          <a href="#about">关于我</a>
+          <a className="nav-gallery" href="#gallery">影像集</a>
+          <a href="#contact">联系我</a>
+          <a className="nav-film" href="#film">自我介绍 <Arrow diagonal /></a>
+        </nav>
       </div>
     </header>
     <main id="main">
@@ -77,6 +82,31 @@ export default function Home() {
         <p className="film-caption"><span>02 <i /> 雪山暮色</span><span>THE BLUE HOUR</span></p>
       </section>
       <MediaGallery />
+
+      <section id="contact" className="contact" aria-labelledby="contact-title">
+        <div className="shell contact-inner">
+          <div>
+            <p className="eyebrow"><span className="section-number">04</span> CONTACT</p>
+            <h2 id="contact-title">联系我</h2>
+          </div>
+          <div className="contact-methods">
+            <a className="contact-link" href="mailto:162057227@qq.com">
+              <span>
+                <span className="contact-label">发送邮件</span>
+                <span className="contact-value">162057227@qq.com</span>
+              </span>
+              <Arrow diagonal />
+            </a>
+            <a className="contact-link" href="tel:18909180063">
+              <span>
+                <span className="contact-label">拨打电话</span>
+                <span className="contact-value">189 0918 0063</span>
+              </span>
+              <Arrow diagonal />
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer className="site-footer"><div className="shell footer"><span>杜喆 <i /> 陕西 · 西安</span><a href="#top">回到顶部 <Arrow diagonal /></a></div></footer>
   </>;
