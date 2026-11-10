@@ -78,3 +78,66 @@ h2{font-family:var(--serif);font-size:clamp(36px,5vw,57px);line-height:1.15;font
 @media(max-width:680px){.shell{width:calc(100% - 40px)}.header-inner{min-height:62px}.brand b{display:none}nav{gap:15px;font-size:13px}.nav-film{padding:6px 9px 6px 11px}.mark{width:32px;height:32px}.hero{grid-template-columns:1fr;gap:26px;padding-block:36px 36px}.hero-copy{padding:0}h1{margin-top:16px}.hero-name{font-size:clamp(87px,22vw,122px)}.hero-deck{margin-top:10px}.intro{margin-top:8px}.hero-actions{margin-top:16px}.photo-frame{aspect-ratio:1.22;border-top-right-radius:43px}.about{padding-block:35px 40px}.section-head{display:block;margin-bottom:20px}.section-head>p{text-align:left;margin-top:12px}.section-head>p br{display:none}.topics{grid-template-columns:1fr}.topic,.topic:first-child,.topic:last-child{padding:18px 0}.topic+.topic{border-left:none;border-top:1px solid #bdcec0}.topic h3{margin-top:9px}.film{padding-block:40px}.film-frame{grid-template-columns:1fr;gap:23px;padding:26px 22px;border-bottom-right-radius:35px}.film-copy{padding-bottom:0}.film-landscape{object-position:60% center}.film-frame::after{background:linear-gradient(165deg,#242735ce,#25253463 53%,#262638a0)}.player video{width:min(100%,220px)}.footer{min-height:62px}}
 @media(max-width:360px){.shell{width:calc(100% - 30px)}.hero-actions{gap:10px}.cta{padding-inline:11px}.text-link{font-size:13px}.film-frame{padding:21px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+.gallery {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(36px, 6vw, 70px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-areas:
+    "road car"
+    "clip car";
+  align-items: start;
+  gap: 28px 22px;
+}
+
+.gallery-road { grid-area: road; }
+.gallery-car { grid-area: car; }
+.gallery-clip { grid-area: clip; }
+
+.gallery-grid img,
+.gallery-grid video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  background: #202631;
+}
+
+.gallery-grid video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.gallery-grid figcaption > :last-child {
+  white-space: nowrap;
+}
+
+nav .nav-gallery {
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "road" "car" "clip";
+    gap: 25px;
+  }
+
+  .gallery-car img {
+    max-height: 65svh;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .header-inner:has(.nav-gallery) nav {
+    gap: 10px;
+  }
+
+  .header-inner:has(.nav-gallery) .nav-film {
+    white-space: nowrap;
+  }
+}

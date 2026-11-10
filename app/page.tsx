@@ -1,3 +1,5 @@
+import MediaGallery from "./MediaGallery";
+
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
     <path d={diagonal ? "M5 15 15 5M5 5h10v10" : "M3 10h13m-5-5 5 5-5 5"} stroke="currentColor" strokeWidth="1.5" />
@@ -22,7 +24,7 @@ export default function Home() {
     <header className="site-header" id="top">
       <div className="shell header-inner">
         <a className="brand" href="#top" aria-label="杜喆，返回顶部"><span className="mark">Z<span>.</span></span><span className="brand-name">杜喆 <b>DU ZHE</b></span></a>
-        <nav aria-label="页面导航"><a href="#about">关于我</a><a className="nav-film" href="#film">自我介绍 <Arrow diagonal /></a></nav>
+        <nav aria-label="页面导航"><a href="#about">关于我</a><a className="nav-gallery" href="#gallery">影像集</a><a className="nav-film" href="#film">自我介绍 <Arrow diagonal /></a></nav>
       </div>
     </header>
     <main id="main">
@@ -79,6 +81,7 @@ export default function Home() {
         </div>
         <p className="film-caption"><span>02 <i /> 雪山暮色</span><span>THE BLUE HOUR</span></p>
       </section>
+      <MediaGallery />
     </main>
     <footer className="site-footer"><div className="shell footer"><span>杜喆 <i /> 陕西 · 西安</span><a href="#top">回到顶部 <Arrow diagonal /></a></div></footer>
   </>;
