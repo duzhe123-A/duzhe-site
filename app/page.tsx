@@ -24,28 +24,34 @@ export default function Home() {
     <a className="skip" href="#main">跳到正文</a>
     <header className="site-header" id="top">
       <div className="shell header-inner">
-        <a className="brand" href="#top" aria-label="杜喆，返回顶部"><span className="mark">Z<span>.</span></span><span className="brand-name">杜喆 <b>DU ZHE</b></span></a>
+        <a className="brand" href="#top" aria-label="杜喆，返回顶部"><span className="mark" aria-hidden="true">DZ</span><span className="brand-name">杜喆 <b>DU ZHE</b></span></a>
         <nav aria-label="页面导航">
           <a href="#about">关于我</a>
           <a className="nav-gallery" href="#gallery">影像集</a>
           <a href="#contact">联系我</a>
-          <a className="nav-film" href="#film">自我介绍 <Arrow diagonal /></a>
+          <a className="nav-film" href="#film">我的作品 <Arrow diagonal /></a>
         </nav>
       </div>
     </header>
     <main id="main">
-      <section className="shell hero" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="signal" /> 陕西 · 西安 <span className="tiny-rule" /> XI’AN, CHINA</p>
-          <h1 id="hero-title"><span className="hello">你好，我是</span><span className="hero-name">杜喆<span className="name-dot">.</span></span></h1>
-          <p className="hero-deck">在轨道与镜头之间</p>
-          <p className="intro">学铁道检修，也喜欢剪辑。用镜头记录生活，把零散的日子剪成有节奏的片段。</p>
-          <div className="hero-actions">
-            <a className="cta" href="#film"><span className="triangle" /> 看 60 秒自我介绍</a>
-            <a className="text-link" href="#about">更多关于我 <Arrow /></a>
+      <section className="hero" aria-labelledby="hero-title">
+        <OpeningFilm />
+        <div className="shell hero-content">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="signal" /> 陕西 · 西安 <span className="tiny-rule" /> XI’AN, CHINA</p>
+            <h1 id="hero-title"><span className="hello">你好，我是</span><span className="hero-name">杜喆<span className="name-dot">.</span></span></h1>
+            <p className="hero-deck">在轨道与镜头之间</p>
+            <p className="intro">学铁道检修，也喜欢剪辑。用镜头记录生活，把零散的日子剪成有节奏的片段。</p>
+            <div className="hero-actions">
+              <a className="cta" href="#film"><span className="triangle" /> 看 60 秒自我介绍</a>
+              <a className="text-link" href="#gallery">探索影像集 <Arrow /></a>
+            </div>
+          </div>
+          <div className="hero-caption" aria-hidden="true">
+            <span><b>01 / 05</b> <i /> 列车穿林</span>
+            <span>OPENING SHOT</span>
           </div>
         </div>
-        <OpeningFilm />
       </section>
 
       <section id="about" className="about" aria-labelledby="about-title">
@@ -65,17 +71,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="film" className="shell film" aria-labelledby="film-title">
+      <section id="film" className="shell film" aria-labelledby="works-title">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow"><span className="section-number">02</span> SELECTED WORK</p>
+            <h2 id="works-title">我的作品</h2>
+          </div>
+          <p>用镜头做一份自我介绍。</p>
+        </div>
         <div className="film-frame">
           <img className="film-landscape" src="/scenes/blue-hour.jpg" alt="" width="1622" height="854" loading="lazy" />
           <div className="film-copy">
-            <p className="eyebrow"><span className="section-number">02</span> INTRO FILM</p>
-            <h2 id="film-title">一分钟，<br />认识杜喆。</h2>
-            <p>我有点慢热，不过镜头替我说了不少。</p>
+            <p className="eyebrow">01 / 个人影像</p>
+            <h3 id="film-title">一分钟，<br />认识杜喆。</h3>
+            <p>我来自西安，学的是铁道检修，也喜欢用剪辑记录日常。这段短片聊聊我的名字、性格和喜欢的事。</p>
             <div className="film-meta"><span className="signal" /><span>自我介绍</span><span>01:00</span></div>
           </div>
-          <div className="player"><video controls playsInline preload="metadata" poster="/media/intro-cover.jpg" width="540" height="960" aria-label="杜喆的 60 秒自我介绍视频">
+          <div className="player"><video controls playsInline preload="none" poster="/media/intro-cover.jpg" width="540" height="960" aria-label="杜喆的 60 秒自我介绍视频">
             <source src="/media/intro.mp4" type="video/mp4" />
+            <track kind="subtitles" src="/media/intro.zh-CN.vtt" srcLang="zh-CN" label="简体中文" />
             你的浏览器不支持视频播放。<a href="/media/intro.mp4">打开自我介绍视频</a>。
           </video></div>
         </div>
@@ -87,7 +101,7 @@ export default function Home() {
         <div className="shell contact-inner">
           <div>
             <p className="eyebrow"><span className="section-number">04</span> CONTACT</p>
-            <h2 id="contact-title">联系我</h2>
+            <h2 id="contact-title">联系我<span aria-hidden="true">.</span></h2>
           </div>
           <div className="contact-methods">
             <a className="contact-link" href="mailto:162057227@qq.com">
