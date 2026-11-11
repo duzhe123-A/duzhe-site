@@ -88,8 +88,7 @@ nav a:hover, .footer a:hover, .text-link:hover { color: var(--accent); }
 .triangle { width: 0; height: 0; border-block: 5px solid transparent; border-left: 8px solid currentColor; }
 
 .hero-caption { display: flex; justify-content: space-between; gap: 10px; padding-top: 15px; border-top: 1px solid #d7e3cd66; color: #e2eadc; font: 650 10px/1.5 var(--mono); letter-spacing: .13em; }
-.hero-caption b { color: var(--accent); }
-.hero-caption i, figcaption i, .film-caption i, .footer i { display: inline-block; width: 4px; height: 4px; margin: 0 4px; border-radius: 50%; vertical-align: middle; background: var(--accent); }
+.hero-caption i, .film-caption i, .footer i { display: inline-block; width: 4px; height: 4px; margin: 0 4px; border-radius: 50%; vertical-align: middle; background: var(--accent); }
 .opening-toggle {
   position: absolute;
   z-index: 3;
@@ -136,27 +135,25 @@ h2 { font-size: clamp(36px, 6vw, 76px); font-weight: 850; line-height: 1.08; let
   line-height: 1.08;
   letter-spacing: -.05em;
 }
-.film-copy>p:not(.eyebrow) { margin-top: 14px; color: #e5e9e2; font-size: 15px; line-height: 1.8; }
+.film-copy>p { margin-top: 14px; color: #e5e9e2; font-size: 15px; line-height: 1.8; }
 .film-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 19px; color: #e4ecd9; font: 650 11px/1.4 var(--mono); letter-spacing: .08em; }
 .film-meta span:last-child { padding: 3px 6px; border: 1px solid #e5f2d66b; }
 .player { display: grid; justify-items: center; min-width: 0; }
-.player video { display: block; width: min(100%, 240px); height: auto; aspect-ratio: 9 / 16; border: 1px solid #bcd0ae75; background: #090b09; box-shadow: 0 18px 50px #07090799; }
+.player video { display: block; width: min(100%, 240px); height: auto; aspect-ratio: 9 / 16; scroll-margin-top: 20px; border: 1px solid #bcd0ae75; background: #090b09; box-shadow: 0 18px 50px #07090799; }
 
 .gallery { border-top: 1px solid var(--line); }
-.gallery-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); grid-template-areas: "road car" "clip car"; align-items: start; gap: 20px; }
-.gallery-road { grid-area: road; }
-.gallery-car { grid-area: car; }
-.gallery-clip { grid-area: clip; }
-.gallery-grid figure, .opening-grid figure { border: 1px solid var(--line); background: var(--surface); }
-.gallery-grid img, .gallery-grid video, .opening-grid video { display: block; width: 100%; height: auto; background: #151b16; }
-.gallery-grid video, .opening-grid video { aspect-ratio: 16 / 9; }
+.gallery-grid { display: grid; grid-template-columns: minmax(0, 2.25fr) minmax(0, 1fr); align-items: start; gap: 20px; }
+.gallery-grid figure, .gallery-clips figure { border: 1px solid var(--line); background: var(--surface); }
+.gallery-grid img, .gallery-clips video { display: block; width: 100%; height: auto; background: #151b16; }
+.gallery-clips video { aspect-ratio: 16 / 9; }
 figcaption, .film-caption { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font: 650 11px/1.5 var(--mono); letter-spacing: .075em; }
 figcaption { padding: 13px 15px; }
 figcaption>span:last-child { white-space: nowrap; }
 .film-caption { margin-top: 12px; }
-.opening-collection { margin-top: clamp(35px, 7vw, 80px); padding-top: 24px; border-top: 1px solid var(--line); }
-.opening-collection h3 { margin: 8px 0 20px; font-size: clamp(25px, 4vw, 43px); font-weight: 790; }
-.opening-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.gallery-more { margin-top: 20px; }
+.gallery-more summary { width: fit-content; padding: 12px 16px; border: 1px solid var(--line); color: var(--accent); cursor: pointer; }
+.gallery-more summary:hover { border-color: var(--accent); }
+.gallery-clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 18px; }
 
 .contact {
   border-block: 1px solid var(--line);
@@ -198,8 +195,7 @@ figcaption>span:last-child { white-space: nowrap; }
   .opening-toggle { top: 16px; right: 17px; bottom: auto; }
   .section-head { display: block; margin-bottom: 20px; }
   .section-head>p { margin-top: 12px; text-align: left; }
-  .topics, .film-frame, .opening-grid { grid-template-columns: minmax(0, 1fr); }
-  .gallery-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "road" "car" "clip"; }
+  .topics, .film-frame, .gallery-grid, .gallery-clips { grid-template-columns: minmax(0, 1fr); }
   .gallery-car img { max-height: 68svh; object-fit: contain; }
 }
 
