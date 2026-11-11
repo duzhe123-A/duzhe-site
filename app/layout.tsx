@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const title = "杜喆 — 在轨道与镜头之间";
@@ -7,6 +7,8 @@ const siteUrl = new URL(
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://duzhe-personal-studio.supplebeak6.chatgpt.site/",
 );
 const shareCover = new URL("share-cover.jpg", siteUrl);
+
+export const viewport: Viewport = { themeColor: "#171612" };
 
 export const metadata: Metadata = {
   title,
